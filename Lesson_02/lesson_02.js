@@ -1,5 +1,6 @@
 /**
  * Created by lichaoqun on 2017/11/7.
+ *  ES5 的定义一个类的方法
  */
 function  User(name, age){
     this.name = name;

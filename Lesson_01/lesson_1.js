@@ -1,5 +1,6 @@
 /**
  * Created by lichaoqun on 2017/11/7.
+ * let和 const 的使用
  */
 console.log(1111);
 var a = 12;

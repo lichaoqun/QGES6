@@ -1,5 +1,6 @@
 /**
  * Created by lichaoqun on 2017/11/7.
+ * ES6 定义一个类和继承一个类的方法
  */
 
 //function  User(name, age){
@@ -52,7 +53,7 @@ class User{
 
 
 class Manager extends User{
-    constuctor(name, age, password){
+    constructor(name, age, password){
         super.constructor(name, age);
         this.password = password;
     }
@@ -67,14 +68,19 @@ class Manager extends User{
 
 console.log(typeof Manager, typeof  User);
 
+console.log('============================');
 
 var user = new User('leo', 22);
 console.log( user, user.info, user.test(), User.getClassName);
+console.log(Object.getOwnPropertyNames(User.prototype));
 
+
+console.log('============================');
 
 var manager = new Manager(11, 22, 44)
 manager.changepassword(12345);
 console.log(manager, manager.info, manager.test(), Manager.getClassName);
+console.log(Object.getOwnPropertyNames(Manager.prototype));
 
 
 
