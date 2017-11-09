@@ -4,7 +4,6 @@
  */
 
 class User{
-
     constructor(name, age){
         this.name = name;
         this.age  = age;
@@ -53,17 +52,25 @@ class Manager extends User{
     }
 }
 
-console.log(typeof Manager, typeof  User);
+console.log(typeof Manager, typeof  User);// function function
 
-// - 一个类是否继承了另一个类。
+// - 方法返回指定对象的原型
 console.log(Object.getPrototypeOf(Manager) === User, Object.getPrototypeOf(User) === Manager, Object.getPrototypeOf(Manager) === Manager, Object.getPrototypeOf(User) === User); // ture, false, false, false
 
 console.log('============================');
 
 var user = new User('leo', 22);
 user.opAge = 100;
-console.log( user, user.info, user.test(), User.getClassName());
+console.log( user, user.info, user.test(), User.getClassName());// User { name: 'leo', age: 100, firstAge: 22 } ' name : leo |  age : 100 |  firstAge : 22' 'test___0001' 'User'
 console.log(Object.getOwnPropertyNames(User.prototype));
+/*
+* [ 'constructor',
+ 'changeName',
+ 'changeAge',
+ 'info',
+ 'opAge',
+ 'test' ]
+* */
 
 
 console.log('============================');
@@ -77,16 +84,21 @@ Object.assign(Manager.prototype, {
 });
 
 manager.changepassword(12345);
-console.log(manager, manager.info, manager.test(), Manager.getClassName());
+console.log(manager, manager.info, manager.test(), Manager.getClassName());// Manager { name: 11, age: 22, firstAge: 22, password: 12345 } ' name : 11 |  age : 22 |  firstAge : 22 |  pwd : 12345' 'test___0001' 'User'
 
 // - 打印所有的方法(只能打印对象方法 不能打印类方法)
-console.log(Object.getOwnPropertyNames(Manager.prototype));
+console.log(Object.getOwnPropertyNames(Manager.prototype)); // [ 'constructor', 'changepassword', 'info', 'func1', 'func2' ]
 
 console.log('============================');
 
-// - 判断一个类是不是另一个类的子类
-console.log(new User() instanceof Manager, new Manager() instanceof User);
-console.log();
+// - 用于判断一个变量是否某个对象的实例
+console.log(new User() instanceof Manager, new Manager() instanceof User, new User() instanceof User, new Manager() instanceof Manager);// false true true true
+/**
+ *  typeof用以获取一个变量或者表达式的类型，typeof一般只能返回如下几个结果：number,boolean,string,function（函数）,object（NULL,数组，对象）,undefined。
+ *  instanceof用于判断一个变量是否某个对象的实例
+ *  Object.getPrototypeOf() 方法返回指定对象的原型（内部[[Prototype]]属性的值)
+ */
+
 
 // - 为原型添加方法
 // =========================第一部分====================
