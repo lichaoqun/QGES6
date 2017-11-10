@@ -10,6 +10,12 @@ function QG(first, ...argus){
     for(let value of argus){
         console.log(value);
     }
+    /*
+    * 第二个
+    * 第三个
+    * 第四个
+    * 第五个
+    * */
 
 
     for (let arr of argus.entries()){
@@ -51,7 +57,7 @@ console.log(arr1, arr_1, arr2);// [ 'www', 'baidu', 'com', 'cn' ] [ 'www', 'baid
 
 //===============字符串模板===============
 let name = 'QG';
-let teacherSay = `老实说 ${name} 是一个很不错的人`;
+let teacherSay = `老师说 ${name} 是一个很不错的人`;
 console.log(teacherSay);
 
 // 字符串查找
@@ -79,7 +85,7 @@ console.log(Array.from(json));
  console.log(arr);//[1, 2, 3, bbb: "nor 1", -2: "nor 2"]
  console.log(arr.bbb) //"nor 1"
 
-// - 数组的查找 查到满足第一个满足下面条件的数组的元素
+// - 数组的查找 查到满足第一个满足下面条件的数组的元素的下表
 let datas = [1, 3, 5, 6, 7, 8, 9, 10];
 console.log(datas.find((value, idx,arr)=>{
     return value > 3;// value > 3 就是条件

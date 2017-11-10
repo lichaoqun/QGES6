@@ -15,7 +15,7 @@ let [a3, b3 = 'jishupang'] = ['jsp'];
 console.log(a3, b3);// jsp jishupang
 
 let {a4, b4} = {a4: 'a4', b4 :'b4'};
-console.log(a4, b4);
+console.log(a4, b4);// a4 b4
 
 let a5;
 ({a5} = {a5 : 'a5'});
