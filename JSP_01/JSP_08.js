@@ -33,8 +33,8 @@ let pro = new Proxy({
         // 改变的属性名                   'name'
         // 改变后的属性值                  '11'
         // 改变钱的属性                   { add: [Function: add], name: 'I am Proxy' }
-        return target[key] = value;
-        return target[key] = value + 'adfsff';
+         target[key] = value;
+         target[key] = value + 'adfsff';
     },
 
 });
@@ -59,9 +59,9 @@ pro.name = '11';
 * { add: [Function: add], name: 'I am Proxy' } 'name'
 * */
 
-let tagrget = function(){
-    return 'I am JSPang';
-}
+//let tagrget = function(){
+//    return 'I am JSPang';
+//}
 let tagrget = function (a, b) {
     return  a + b;
 }

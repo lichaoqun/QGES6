@@ -74,32 +74,35 @@ let json = {
     '0' : 'josn',
     '1' : 'jishupang',
     '2' :   'heheh',
-    length : 3
+    length : 3// 注意在json 数组中 length 是必须的 如果没有 就变成了 json 字符串了
 };
-console.log(Array.from(json));
+let arr_111 = Array.from(json);
+console.log(arr_111); // [ 'josn', 'jishupang', 'heheh' ]
 
 // - 数组值的存取
  var arr = [1,2,3];
  arr["bbb"]="nor 1";
  arr[-2]="nor 2";
+arr[1]="nor 1";
  console.log(arr);//[1, 2, 3, bbb: "nor 1", -2: "nor 2"]
  console.log(arr.bbb) //"nor 1"
 
-// - 数组的查找 查到满足第一个满足下面条件的数组的元素的下表
+// - 数组的查找 查到满足第一个满足下面条件的数组的元素
 let datas = [1, 3, 5, 6, 7, 8, 9, 10];
-console.log(datas.find((value, idx,arr)=>{
-    return value > 3;// value > 3 就是条件
+console.log('查找到的下标是 : ' + datas.find((value, idx,arr)=>{
+    return value > 3 && idx > 2;// value > 3 就是条件
 }));
 
 let myArr = Array.from(json);
 
 // entries() 使用 这个方法的返回是个迭代器
-console.log(myArr.entries());
+console.log(myArr.entries());//{}
 console.log(myArr.entries().next());// { value: [ 0, 'josn' ], done: false } value:元素和下标组成的数组, done 是否循环完成
 console.log(myArr.entries().next().value); // [ 0, 'josn' ]
 
-
+//  list.value 打印的是 value 值
 let list = myArr.entries();
+console.log(list);//{}
 console.log(list.next());// { value: [ 0, 'josn' ], done: false }
 console.log(list.next());// { value: [ 1, 'jishupang' ], done: false }
 console.log(list.next());//{ value: [ 2, 'heheh' ], done: false }

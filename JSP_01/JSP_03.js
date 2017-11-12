@@ -33,7 +33,7 @@ console.log(add(2)); // 3
 
 //- 对象的函数解构 json
 let json = {
-    a   : 'jsPang',
+    a   :   'jsPang',
     b   :   '技术胖'
 }
 
@@ -62,6 +62,7 @@ let obj1 = {
 }
 console.log('a' in obj1);// true
 console.log('c' in obj1);// false
+console.log('jsPang' in obj1);// false
 
 let arr4  = [,,,];
 let arr5 = ['1',,];
