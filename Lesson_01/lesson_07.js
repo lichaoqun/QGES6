@@ -73,7 +73,7 @@ function  *fn4(_name){
 
 let it4 = fn4('leo4');
 console.log(it4.next('hehe')); //  value: 'leo4', done: false }
-console.log(it4.next()); //  { value: undefined, done: true }
+console.log(it4.next('hehehe')); //  { value: 'hehehe', done: true }
 
 // - 修复  yield 返回 undefined 的问题 只能通过 next() 方式赋值;
 //console.log(it4.next('liang')); //  { value: 'liang', done: true }
@@ -112,3 +112,37 @@ console.log(fnIt7.next('b'));// { value: 'b', done: false }
 console.log(fnIt7.next('a'));//b a     { value: undefined, done: false }
 fnIt7.next('test');//test
 
+// - Generator函数和 Promise 的混合使用
+function ayncFunc(name){
+    return new Promise(function(resolve, reject){
+        setTimeout(function(){
+            console.log(3);
+            resolve(`my name is ${name}`);
+        });
+    });
+}
+
+function *fn8(){
+    console.log(2);
+    console.log(yield ayncFunc('QG'));
+}
+
+let gf = fn8();
+function  exec(gf, value){
+    let resulet = gf.next(value);
+    console.log(`--------++--------${resulet.value}--------++--------`);
+    if (!resulet.done){
+        if (resulet.value instanceof  Promise){
+            resulet.value.then(function(v){
+                console.log(`----------==------${v}--------==--------`);
+                console.log(4);
+                exec(gf, v);
+            });
+        }else{
+            console.log(`--------**--------${value}--------**--------`);
+            exec(gf, value);
+        }
+    }
+}
+
+exec(gf);
