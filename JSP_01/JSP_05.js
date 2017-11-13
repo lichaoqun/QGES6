@@ -31,12 +31,16 @@ for(let item in obj3){
 
 // - 使用 Symbol 保护对象. 用 for...in 遍历不到 age 属性 但是直接打印 obj4 是可以看到这个属性的 实现了保护的作用
 let obj4 = {name4 : 'jspang4', skill4 :  'web4'};
-let age4 = Symbol();
+let age4 = Symbol('age4');
 obj4[age4] = 104;
 console.log(obj4); //{ name4: 'jspang4', skill4: 'web4', [Symbol()]: 104 }
 for(let item4 in obj4){
     console.log(item4);// name skill
     console.log(obj4[item4]); // jspang web
 }
+// 下边的方法可以查看 object的Symbol 保护的对象 返回的是个数组 需要一下方式查看
+//let key = Object.getOwnPropertySymbols(obj4)[0];
+//console.log(Object[key]);
+console.log(Object.getOwnPropertySymbols(obj4));// [ Symbol(age4) ]
 
 
