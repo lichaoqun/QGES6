@@ -89,7 +89,7 @@ arr[1]="nor 1";
 
 // - 数组的查找 查到满足第一个满足下面条件的数组的元素
 let datas = [1, 3, 5, 6, 7, 8, 9, 10];
-console.log('查找到的下标是 : ' + datas.find((value, idx,arr)=>{
+console.log('查找到的元素是 : ' + datas.find((value, idx, arr)=>{
     return value > 3 && idx > 2;// value > 3 就是条件
 }));
 

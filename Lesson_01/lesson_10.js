@@ -35,7 +35,6 @@ var proxy = new Proxy(obj, {
 console.log(proxy.name);// QG
 console.log(obj.name);//QG
 
-
 proxy.name = 'XC';
 console.log(proxy.name);// no
 console.log(obj.name);// XC

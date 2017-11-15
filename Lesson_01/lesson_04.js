@@ -30,7 +30,7 @@ function  asyncFuc(a, b){
         setTimeout(function () {
             console.log(a, b);
             resolve(a + b);
-        }, 200);
+        }, 2000);
     });
 }
 
@@ -43,6 +43,7 @@ function  asyncFuc(a, b){
     }, function(error){
             console.log(error);
         })
+
         .then(function(result){
         if(result>4){
             console.log('ok');

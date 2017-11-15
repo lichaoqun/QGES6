@@ -44,3 +44,4 @@ new Promise(step1)
     console.log(`----------- | - ${result}`);
 });
 
+console.log('主线程的结束打印');

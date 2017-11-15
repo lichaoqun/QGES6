@@ -47,7 +47,6 @@ Manager.prototype.changePassword = function (pwd) {
     this.password = pwd;
 }
 
-
 var manager = new Manager('leo', 22, '123');
 manager.changePassword(456);
 manager.changeName('QG');

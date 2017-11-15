@@ -69,7 +69,7 @@ let arr5 = ['1',,];
 console.log(`第一个测试${0 in arr4},第二个测试${0 in  arr5}`); // 第一个测试false,第二个测试true
 
 // - 数组遍历 for of 方法
-let arr6 = ['jishupang', '技术胖', '前段视频'];
+let arr6 = ['jishupang', '技术胖', '前端视频'];
 for(let value  of  arr6){
     console.log(`value 是 ${value}`);
 

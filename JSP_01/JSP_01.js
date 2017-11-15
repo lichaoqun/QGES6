@@ -17,6 +17,9 @@ console.log(a3, b3);// jsp jishupang
 let {a4, b4} = {a4: 'a4', b4 :'b4'};
 console.log(a4, b4);// a4 b4
 
+let {a7:x='a7', b7} = { b7 :'b7'};
+console.log(x, b7);// a7 b7
+
 let a5;
 ({a5} = {a5 : 'a5'});
 console.log(a5);

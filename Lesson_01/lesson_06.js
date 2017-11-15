@@ -35,9 +35,9 @@ class  UserGroup{
         const length = names.length;
         let self = this;
         return {
-            next : function(){
+            next : ()=>{
                 let name = names[i++];
-                let qq = self.users[name];
+                let qq = this.users[name];
                 return {value : {name, qq},done:i > length}
             }
         }

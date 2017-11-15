@@ -71,9 +71,11 @@ function  *fn4(_name){
     return name;
 }
 
-let it4 = fn4('leo4');
-console.log(it4.next('hehe')); //  value: 'leo4', done: false }
+let it4 = fn4('he');
+console.log(it4.next('hehe')); //  value: 'he', done: false }
 console.log(it4.next('hehehe')); //  { value: 'hehehe', done: true }
+console.log(it4.next('hehehehe')); //  { value: undefined, done: true }
+
 
 // - 修复  yield 返回 undefined 的问题 只能通过 next() 方式赋值;
 //console.log(it4.next('liang')); //  { value: 'liang', done: true }
@@ -110,7 +112,7 @@ let fnIt7 = fn7();
 console.log(fnIt7.next());// { value: 'a', done: false }
 console.log(fnIt7.next('b'));// { value: 'b', done: false }
 console.log(fnIt7.next('a'));//b a     { value: undefined, done: false }
-fnIt7.next('test');//test
+console.log(fnIt7.next('test'));// test     { value: undefined, done: true }
 
 // - Generator函数和 Promise 的混合使用
 function ayncFunc(name){
