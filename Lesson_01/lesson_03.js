@@ -17,11 +17,11 @@ class User{
 
     changeName(name){
         this.name = name;
-}
+    }
 
     changeAge(age){
     this.age = age;
-}
+    }
 
     get info(){
         return ' name : ' + this.name + ' | ' + ' age : ' + this.age + ' | ' + ' firstAge : ' + this.firstAge;
