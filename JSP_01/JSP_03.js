@@ -105,6 +105,13 @@ arr6.forEach((value, index)=>{
 arr6.filter((value, index)=>{
     console.log(`value 是 ${value}, index 是 ${index}`);
 })
+// - 使用 filter 过滤 其中的方法
+myArr1 = ['_name1', 'name2', 'name3', '_name4', '_name5', 'name6', 'name7'];
+myArr2 = myArr1.filter((key)=>{
+    return key.startsWith('_');
+});
+console.log(myArr2);//
+
 /**
  * value 是 jishupang, index 是 0
  * value 是 技术胖, index 是 1
